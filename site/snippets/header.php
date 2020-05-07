@@ -42,9 +42,13 @@
                     <?php endforeach ?>
 
                     <?php if ($kirby->session()->get('email') != null): ?>
-                        <form method="post" action="<?= $site->url() . '/login'?>" enctype="multipart/form-data">
-                            <input class="btn" type="submit" name="logout" value="Logout" />
-                        </form>
+                        <li>
+                        <a>
+                            <form method="post" action="<?= $site->url() . '/login'?>" enctype="multipart/form-data">
+                                <input class="input_like_link" type="submit" name="logout" value="Logout" />
+                            </form>
+                        </a>
+                        </li>
                     <?php endif ?>
                 </ul>
             </nav>
