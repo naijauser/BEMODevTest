@@ -1,14 +1,13 @@
 <?php
-return function($kirby, $pages, $page) {
+return function($kirby, $pages, $page, $site) {
+    
+    if ($kirby->session()->get('email') == null) {
+        Header::redirect($site->url() . '/login');
+    }
 
     $alert = null;
     
     if($kirby->request()->is('POST') && get('submit')) {
-        // check the honeypot
-        // if(empty(get('website')) === false) {
-        //     go($page->url());
-        //     exit;
-        // }
 
         $data = [
             'name'  => get('name'),

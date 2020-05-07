@@ -20,7 +20,7 @@ return [
           'security' => true
         ]
     ],
-    // 'debug' => true
+    'debug' => true,
     'panel' =>[
         'install' => true
       ]
