@@ -40,6 +40,12 @@
                     <?php foreach ($site->children()->listed() as $item): ?>
                         <li><?= $item->title()->link() ?></li> 
                     <?php endforeach ?>
+
+                    <?php if ($kirby->session()->get('email') != null): ?>
+                        <form method="post" action="<?= $site->url() . '/login'?>" enctype="multipart/form-data">
+                            <input class="btn" type="submit" name="logout" value="Logout" />
+                        </form>
+                    <?php endif ?>
                 </ul>
             </nav>
         </header>
